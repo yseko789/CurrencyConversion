@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.yseko.currencyconversion.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_conversionFragment"
+            app:destination="@id/conversionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/conversionFragment"
+        android:name="com.yseko.currencyconversion.ConversionFragment"
+        android:label="fragment_conversion"
+        tools:layout="@layout/fragment_conversion" />
+    <fragment
+        android:id="@+id/converterToolFragment"
+        android:name="com.yseko.currencyconversion.ConverterToolFragment"
+        android:label="fragment_converter_tool"
+        tools:layout="@layout/fragment_converter_tool" />
+</navigation>
