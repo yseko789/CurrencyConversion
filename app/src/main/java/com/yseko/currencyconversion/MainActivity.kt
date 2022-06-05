@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -22,6 +23,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setupWithNavController(navController)
 
+        setupActionBarWithNavController(this, navController)
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
 

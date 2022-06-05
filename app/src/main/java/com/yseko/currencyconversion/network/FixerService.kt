@@ -5,6 +5,7 @@ import com.squareup.moshi.Moshi
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.apilayer.com/fixer/"
@@ -29,6 +30,21 @@ interface FixerService {
     suspend fun getSymbols(
         @Query("apikey") apikey: String
     ): ResponseSymbols
+
+    @GET("latest")
+    suspend fun getLatest(
+        @Query("base") base:String,
+        @Query("symbols")symbols: String,
+        @Query("apikey") apikey: String
+    ):ResponseDate
+
+    @GET("{date}")
+    suspend fun getDate(
+        @Path("date") date: String,
+        @Query("base") base: String,
+        @Query("symbols") symbols: String,
+        @Query("apikey") apikey: String
+    ): ResponseDate
 }
 
 object FixerApi{

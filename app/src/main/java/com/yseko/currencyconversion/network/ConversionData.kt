@@ -14,3 +14,8 @@ data class InfoConvert(
 data class ResponseSymbols(
     val symbols: Map<String, String>
 )
+
+data class ResponseDate(
+    val rates: Map<String, Double >
+)
+

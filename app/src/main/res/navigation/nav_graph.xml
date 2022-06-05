@@ -8,20 +8,39 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.yseko.currencyconversion.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="My List"
+        tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_conversionFragment"
-            app:destination="@id/conversionFragment" />
+            android:id="@+id/action_homeFragment_to_addConversionFragment"
+            app:destination="@id/addConversionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_moreInfoFragment"
+            app:destination="@id/moreInfoFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/conversionFragment"
-        android:name="com.yseko.currencyconversion.ConversionFragment"
-        android:label="fragment_conversion"
-        tools:layout="@layout/fragment_conversion" />
     <fragment
         android:id="@+id/converterToolFragment"
         android:name="com.yseko.currencyconversion.ConverterToolFragment"
-        android:label="fragment_converter_tool"
+        android:label="Converter Tool"
         tools:layout="@layout/fragment_converter_tool" />
+    <fragment
+        android:id="@+id/addConversionFragment"
+        android:name="com.yseko.currencyconversion.AddConversionFragment"
+        android:label="Add Conversion"
+        tools:layout="@layout/fragment_add_conversion">
+        <action
+            android:id="@+id/action_addConversionFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreInfoFragment"
+        android:name="com.yseko.currencyconversion.MoreInfoFragment"
+        android:label="Rate Information"
+        tools:layout="@layout/fragment_more_info">
+        <argument
+            android:name="from"
+            app:argType="string" />
+        <argument
+            android:name="to"
+            app:argType="string" />
+    </fragment>
 </navigation>
