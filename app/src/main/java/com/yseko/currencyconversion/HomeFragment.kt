@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
                 this.findNavController().navigate(action)
             },
             {
-                println("delete")
+                viewModel.removeConversion(it.id)
             }
         )
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)

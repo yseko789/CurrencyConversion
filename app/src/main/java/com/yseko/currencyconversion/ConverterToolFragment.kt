@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.SpinnerAdapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.yseko.currencyconversion.databinding.FragmentConverterToolBinding
@@ -25,6 +26,7 @@ class ConverterToolFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_converter_tool, container, false)
         viewModel.getSymbols()
         return binding.root
